@@ -1,6 +1,6 @@
-# User's dev env must derive from recodesh/base-dev-env.
-# See https://github.com/recode-sh/base-dev-env/blob/main/Dockerfile for source.
-FROM recodesh/base-dev-env:latest
+# User's dev env must derive from yolosh/base-dev-env.
+# See https://github.com/yolo-sh/base-dev-env/blob/main/Dockerfile for source.
+FROM yolosh/base-env:latest
 
 # Set timezone
 ENV TZ=Europe/Paris
@@ -23,9 +23,9 @@ RUN set -euo pipefail \
   && git clone --quiet https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions \
   && git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-# Change default shell for user "recode"
+# Change default shell for user "yolo"
 RUN set -euo pipefail \
-  && sudo usermod --shell $(which zsh) recode
+  && sudo usermod --shell $(which zsh) yolo
 
 # Add all dotfiles to home folder
-COPY --chown=recode:recode ./dotfiles/.* $HOME/
+COPY --chown=yolo:yolo ./dotfiles/.* $HOME/
