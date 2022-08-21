@@ -1,5 +1,5 @@
 # User's dev env must derive from yolosh/base-dev-env.
-# See https://github.com/yolo-sh/base-dev-env/blob/main/Dockerfile for source.
+# See https://github.com/yolo-sh/base-env/blob/main/Dockerfile for source.
 FROM yolosh/base-env:latest
 
 # Set timezone
